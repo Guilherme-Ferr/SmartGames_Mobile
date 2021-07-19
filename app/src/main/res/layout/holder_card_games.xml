@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="8dp"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/card_games">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:background="#0B1426">
+
+        <ImageView
+            android:id="@+id/img_card"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/aranha"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_game_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="14dp"
+            android:text="Aranha"
+            style="@style/textCards"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_card" />
+
+        <TextView
+            android:id="@+id/tv_game_value"
+            style="@style/textCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$250.00"
+            app:layout_constraintStart_toStartOf="@+id/tv_game_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_game_name"/>
+
+        <Button
+            android:id="@+id/tv_game_details"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="14sp"
+            style="@style/textCards"
+            android:text="Detalhes"
+            android:backgroundTint="#13203b"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_game_value" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--android:id="@+id/recycler_view_platforms"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--app:layout_constraintStart_toStartOf="@+id/tv_game_title"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/tv_game_title"-->
+<!--tools:listitem="@layout/holder_platforms"/>-->

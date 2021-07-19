@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_platforms"
+    android:layout_gravity="center_horizontal">
+
+    <LinearLayout
+        android:id="@+id/holder_platforms"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#13203b">
+
+        <TextView
+            android:id="@+id/inventory_product_name"
+            style="@style/textCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PS4"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
