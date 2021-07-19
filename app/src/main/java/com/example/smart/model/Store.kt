@@ -1,6 +1,6 @@
 package com.example.smart.model
 
-data class Stores (
+data class Store (
     var id_store: Int = 0,
     var name: String = "",
     var cep: Int = 0,

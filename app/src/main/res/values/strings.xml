@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Smart</string>
+    <string name="app_name">Smart Games</string>
+    <string name="code_scaner_hint"><b>Codigo do Poduto:</b></string>
 </resources>

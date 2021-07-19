@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.SmartGames" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">#0b1426</item>
+        <item name="colorPrimaryVariant">#0b1426</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -13,14 +13,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="textCards">
-        <item name="android:textSize">18sp</item>
+    <style name="textCardsDetails">
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="textFullCard">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">#0B1426</item>
+    <style name="textCards">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="textCardsValue">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
 </resources>

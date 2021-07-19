@@ -12,18 +12,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="4dp"
+        android:paddingBottom="8dp"
         android:background="#0B1426">
 
         <ImageView
             android:id="@+id/img_card"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="150dp"
             android:scaleType="centerCrop"
             android:src="@drawable/aranha"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
 
         <TextView
             android:id="@+id/tv_game_name"
@@ -38,24 +40,37 @@
 
         <TextView
             android:id="@+id/tv_game_value"
-            style="@style/textCards"
+            style="@style/textCardsValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_marginTop="8dp"
             android:text="R$250.00"
             app:layout_constraintStart_toStartOf="@+id/tv_game_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_game_name"/>
 
-        <Button
-            android:id="@+id/tv_game_details"
-            android:layout_width="100dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="14sp"
-            style="@style/textCards"
-            android:text="Detalhes"
-            android:backgroundTint="#13203b"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            app:layout_goneMarginEnd="8dp"
+            android:backgroundTint="#0b1426"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_game_value"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_game_value" />
+            app:layout_constraintTop_toTopOf="@+id/tv_game_value">
+
+            <Button
+                style="@style/textCardsDetails"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#13203b"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="Detalhes"
+                android:textSize="16sp" />
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

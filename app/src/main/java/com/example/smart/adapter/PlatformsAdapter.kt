@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smart.R
-import com.example.smart.model.Platforms
+import com.example.smart.model.Platform
 import java.util.*
 
 class PlatformsAdapter (val context: Context) : RecyclerView.Adapter<PlatformsAdapter.Holder>() {
 
-    var listPlatforms =  Collections.emptyList<Platforms>()
+    var listPlatforms =  Collections.emptyList<Platform>()
 
-    fun updateListGames(lista: List<Platforms>){
+    fun updateListPlatforms(lista: List<Platform>){
         listPlatforms = lista
         notifyDataSetChanged()
     }
@@ -37,6 +37,6 @@ class PlatformsAdapter (val context: Context) : RecyclerView.Adapter<PlatformsAd
 
     }
     class Holder(view: View): RecyclerView.ViewHolder(view){
-        val tvName = view.findViewById<TextView>(R.id.holder_platforms)
+        val tvName = view.findViewById<TextView>(R.id.platform_name)
     }
 }
