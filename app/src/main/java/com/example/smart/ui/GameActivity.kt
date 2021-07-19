@@ -1,7 +1,9 @@
 package com.example.smart.ui
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -17,15 +19,16 @@ import com.example.smart.R
 import com.example.smart.adapter.PlatformsAdapter
 import com.example.smart.model.Game
 import com.example.smartgamesmobile.api.GameCalls
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import retrofit2.Call
 import retrofit2.Response
+import java.util.*
 
 class GameActivity : AppCompatActivity() {
 
     lateinit var rvPlatforms: RecyclerView
     lateinit var adapterPlatforms: PlatformsAdapter
-
-    lateinit var gameName: TextView
+    lateinit var gameName: CollapsingToolbarLayout
     lateinit var gameValue: Button
     lateinit var gameDescription: TextView
     lateinit var gameImage: ImageView
@@ -34,8 +37,6 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setTitle("COMPRAR JOGO")
 
         adapterPlatforms = PlatformsAdapter(this)
 
@@ -50,41 +51,11 @@ class GameActivity : AppCompatActivity() {
 
         loadInfo()
 
-        aplyDiscount()
-
         val prefs: SharedPreferences = this@GameActivity.getSharedPreferences("preferencias", Context.MODE_PRIVATE)
         val retrivedUrl: String = prefs.getString("URL", "Nada foi recebido").toString()
 
         Glide.with(this).load(retrivedUrl).into(gameImage)
-    }
 
-    private fun aplyDiscount() {
-        val scannedCode: String = intent.getStringExtra("qrCode").toString()
-
-        Log.e("qrcode", scannedCode)
-
-        if (scannedCode.isNullOrBlank()){
-
-            var game: Game
-            val retrofit = RetrofitApi.getRetrofit()
-            val gamesCall = retrofit.create(GameCalls::class.java)
-            val call = gamesCall.updateGameDiscount(scannedCode.toInt())
-
-            call.enqueue(object : retrofit2.Callback<Game>{
-
-                override fun onFailure(call: Call<Game>, t: Throwable) {
-                    Toast.makeText(this@GameActivity, "Ops! Acho que ocorreu um problema.", Toast.LENGTH_SHORT).show()
-                    Log.e("Erro_CONEXÃO", t.message.toString())
-                }
-                override fun onResponse(call: Call<Game>, response: Response<Game>) {
-                    game = response.body()!!
-
-                }
-            })
-
-        }else{
-            Toast.makeText(this, "CODIGO VAZIO", Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun loadInfo() {
@@ -104,7 +75,7 @@ class GameActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Game>, response: Response<Game>) {
                 game = response.body()!!
 
-                gameName.text = game.name
+                gameName.title = game.name
                 gameDescription.text = game.description
                 gameImageUrl = game.image
                 gameValue.text = "R$ ${String.format("%.2f", game.value)}"

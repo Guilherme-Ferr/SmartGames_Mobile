@@ -1,6 +1,7 @@
 package com.example.smart.ui
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var rvGames: RecyclerView
     lateinit var adapterGames: GamesAdapter
+    lateinit var qrCodeImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +40,51 @@ class MainActivity : AppCompatActivity() {
         rvGames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvGames.adapter = adapterGames
 
+        qrCodeImage = findViewById(R.id.img_camera_code)
+
+        qrCodeImage.setOnClickListener {
+            val qrCodeIntent = Intent(this, ScannerActivity::class.java)
+            startActivity(qrCodeIntent)
+        }
+
         loadGamesList()
 
+        aplyDiscount()
+
+    }
+
+    private fun aplyDiscount() {
+        val scannedCode: String = intent.getStringExtra("qrCode").toString()
+
+        Log.e("qrcode", scannedCode)
+
+        if (scannedCode.isNullOrBlank() || scannedCode == "null"){
+            Toast.makeText(this, "CODIGO VAZIO", Toast.LENGTH_SHORT).show()
+        }else{
+            var game: Game
+            val retrofit = RetrofitApi.getRetrofit()
+            val gamesCall = retrofit.create(GameCalls::class.java)
+            val call = gamesCall.updateGameDiscount(scannedCode.toInt())
+
+            call.enqueue(object : retrofit2.Callback<Game> {
+
+                override fun onFailure(call: Call<Game>, t: Throwable) {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Ops! Acho que ocorreu um problema.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Log.e("Erro_CONEXÃO", t.message.toString())
+                }
+
+                override fun onResponse(call: Call<Game>, response: Response<Game>) {
+                    game = response.body()!!
+
+                    Toast.makeText(this@MainActivity, "Desconto Aplicado em ${game.name}", Toast.LENGTH_SHORT).show()
+
+                }
+            })
+        }
     }
 
     private fun loadGamesList() {

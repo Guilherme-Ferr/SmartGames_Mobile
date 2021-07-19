@@ -24,7 +24,10 @@
         </activity>
         <activity android:name=".ui.GameActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".ui.MainActivity"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".ui.ScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>
