@@ -47,7 +47,7 @@ class ScannerActivity : AppCompatActivity(){
                 runOnUiThread {
                     tvResultado.text = it.text
 
-                    val codeIntent = Intent(this@ScannerActivity, GameActivity::class.java)
+                    val codeIntent = Intent(this@ScannerActivity, MainActivity::class.java)
                     codeIntent.putExtra("qrCode", it.text)
                     startActivity(codeIntent)
                     finish()

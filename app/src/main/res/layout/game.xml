@@ -49,17 +49,20 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        android:fillViewport="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lienar_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="38dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/div_platform_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:padding="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -89,7 +92,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/div_platform_list" />
 
             <Button
-                android:id="@+id/tv_full_game_value"
+                android:id="@+id/btn_full_game_value"
                 style="@style/textCards"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
@@ -99,6 +102,41 @@
                 android:text="Valor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_full_game_description" />
+
+            <TextView
+                android:id="@+id/tv_full_game_stores"
+                style="@style/textCards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:justificationMode="none"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Lojas Disponiveis Para Compra:"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_full_game_value" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/div_stores_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:backgroundTint="#0b1426"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_full_game_stores">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_stores"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/holder_stores"
+                        android:layout_gravity="center_horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
