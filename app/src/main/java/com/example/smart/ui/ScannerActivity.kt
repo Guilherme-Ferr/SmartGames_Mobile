@@ -18,14 +18,12 @@ class ScannerActivity : AppCompatActivity(){
 
     private lateinit var codeScanner: CodeScanner
     private lateinit var scanner_view: CodeScannerView
-    private lateinit var tvResultado: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.code_scanner)
 
         scanner_view = findViewById(R.id.scanner_view)
-        tvResultado = findViewById(R.id.tv_resultado)
 
         setupPermission()
 
@@ -45,7 +43,6 @@ class ScannerActivity : AppCompatActivity(){
 
             decodeCallback = DecodeCallback {
                 runOnUiThread {
-                    tvResultado.text = it.text
 
                     val codeIntent = Intent(this@ScannerActivity, MainActivity::class.java)
                     codeIntent.putExtra("qrCode", it.text)

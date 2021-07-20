@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">Smart Games</string>
     <string name="code_scaner_hint"><b>Codigo do Poduto:</b></string>
+    <string name="payment_method">Metodo de Pagamento</string>
+    <string name="finalize">Finalizar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="qrcode">qrCode</string>
+    <string name="store_name">Loja Iguatemi</string>
+    <string name="platform_name">PS4</string>
+    <string name="game_name">Aranha</string>
+    <string name="game_value">R$250.00</string>
+    <string name="more_details">Detalhes</string>
+    <string name="game_description">Descrição</string>
+    <string name="game_total_value">Valor</string>
+    <string name="available_stores">Lojas Disponiveis Para Compra:</string>
 </resources>

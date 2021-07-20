@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:layout_marginStart="14dp"
-            android:text="Aranha"
+            android:text="@string/game_name"
             style="@style/textCards"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_card" />
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:layout_marginTop="8dp"
-            android:text="R$250.00"
+            android:text="@string/game_value"
             app:layout_constraintStart_toStartOf="@+id/tv_game_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_game_name"/>
 
@@ -67,7 +67,7 @@
                 android:backgroundTint="#13203b"
                 android:clickable="false"
                 android:gravity="center"
-                android:text="Detalhes"
+                android:text="@string/more_details"
                 android:textSize="16sp" />
 
         </androidx.cardview.widget.CardView>

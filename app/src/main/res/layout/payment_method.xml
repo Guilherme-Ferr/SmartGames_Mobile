@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Metodo de Pagamento"
+        android:text="@string/payment_method"
         android:textAlignment="center"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +36,7 @@
         android:backgroundTint="#13203b"
         android:textAllCaps="false"
         android:src="@drawable/rounded_button_finish_buy"
-        android:text="Finalizar"
+        android:text="@string/finalize"
         style="@style/textCardsValue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_methods" />
@@ -50,7 +50,7 @@
         android:backgroundTint="#13203b"
         android:textAllCaps="false"
         android:src="@drawable/rounded_button_finish_buy"
-        android:text="Cancelar"
+        android:text="@string/cancel"
         style="@style/textCardsValue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_methods" />

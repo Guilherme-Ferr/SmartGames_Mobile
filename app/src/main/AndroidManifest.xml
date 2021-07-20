@@ -31,6 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.MainActivity"
+            android:theme="@style/Theme.SmartGames"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.GameActivity"
             android:screenOrientation="portrait"

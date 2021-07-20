@@ -32,6 +32,7 @@
         android:src="@drawable/ic_baseline_qr_code_2_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/rounded_button_qrcode"/>
+        android:background="@drawable/rounded_button_qrcode"
+        android:contentDescription="@string/qrcode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

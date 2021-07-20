@@ -10,26 +10,6 @@
         android:layout_height="400dp"
         app:autoFocusButtonVisible="false"
         app:flashButtonVisible="false"
-        app:maskColor="#13203b"
-        />
-
-    <TextView
-        android:id="@+id/tv_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scanner_view"
-        android:text="@string/code_scaner_hint"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:textColor="@android:color/black"/>
-
-    <TextView
-        android:id="@+id/tv_resultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_textView"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-        android:textColor="@android:color/black"/>
+        app:maskColor="#13203b" />
 
 </RelativeLayout>

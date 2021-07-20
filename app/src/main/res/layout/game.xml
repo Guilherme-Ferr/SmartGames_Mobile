@@ -16,7 +16,7 @@
             android:id="@+id/tv_full_game_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:title="Aranha"
+            app:title="Nome do Jogo"
             app:expandedTitleTextAppearance="@style/expandedTitle"
             app:collapsedTitleTextAppearance="@style/collapsedTitle"
             android:fitsSystemWindows="true"
@@ -86,7 +86,7 @@
                 android:paddingTop="16dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:text="Descrição"
+                android:text="@string/game_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/div_platform_list" />
@@ -99,7 +99,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="#2FBA35"
-                android:text="Valor"
+                android:text="@string/game_total_value"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_full_game_description" />
 
@@ -112,7 +112,7 @@
                 android:paddingTop="16dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:text="Lojas Disponiveis Para Compra:"
+                android:text="@string/available_stores"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_full_game_value" />
