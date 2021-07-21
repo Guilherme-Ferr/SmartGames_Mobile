@@ -3,6 +3,7 @@ package com.example.smart.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var rvGames: RecyclerView
     lateinit var adapterGames: GamesAdapter
     lateinit var qrCodeImage: ImageView
+    lateinit var swipe: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setTitle("SMART GAMES")
 
         adapterGames = GamesAdapter(this)
+
+        swipe = findViewById(R.id.swipe)
 
         rvGames = findViewById(R.id.recycler_view_games)
         rvGames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -68,14 +72,11 @@ class MainActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<Game>, response: Response<Game>) {
                     game = response.body()!!
 
-                    Toast.makeText(this@MainActivity, "Desconto Aplicado Em ${game.name}!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity, "20% de Desconto Aplicado em ${game.name}!", Toast.LENGTH_LONG).show()
 
                 }
             })
 
-        }
-        else{
-            Toast.makeText(this, scannedCode, Toast.LENGTH_SHORT).show()
         }
     }
 
