@@ -54,8 +54,6 @@ class MainActivity : AppCompatActivity() {
     private fun aplyDiscount() {
         val scannedCode: String = intent.getStringExtra("qrCode").toString()
 
-        Log.e("qrcode", scannedCode)
-
         if (scannedCode !== "null"){
             var game: Game
             val retrofit = RetrofitApi.getRetrofit()

@@ -27,7 +27,6 @@
             android:id="@+id/full_img_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/aranha"
             android:scaleType="fitXY"/>
 
             <View

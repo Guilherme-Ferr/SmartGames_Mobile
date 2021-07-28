@@ -1,7 +1,6 @@
 package com.example.smart.ui
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smart.R
 import com.google.android.gms.maps.CameraUpdateFactory
