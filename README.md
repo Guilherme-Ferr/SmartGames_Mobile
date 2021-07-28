@@ -18,6 +18,8 @@
 
 - Abrir o projeto após sua clonagem 
 
+- Alterar o IP fornecido pelo IP da sua maquina no arquivo UrlApi em: src\main\java\com.example.smart\api\UrlApi.kt
+
 - Iniciar a aplicação
 ```
 
