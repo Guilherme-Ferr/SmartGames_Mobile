@@ -5,7 +5,7 @@
 ### Linguagens e ferramentas utilizadas
 
 * Linguagens e ferramentas utilizadas: Kotlin
-* IDE: Express
+* IDE: Android Studio 4.1.3
 
 ### Pré-requisitos necessários para rodar o projeto
 
